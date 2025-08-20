@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Simplified K logo for favicon -->
+  <g transform="translate(2, 2)">
+    <!-- Main K shape -->
+    <path d="M0 2 L8 2 Q12 2 12 6 L12 14 Q12 18 8 18 L4 18 L4 22 Q4 26 0 26 L0 22 L0 6 Q0 2 4 2 Z" fill="url(#gradient)" rx="3"/>
+    
+    <!-- Top right section -->
+    <path d="M16 2 L24 2 Q28 2 28 6 L28 10 Q28 14 24 14 L20 14 L20 10 Q20 6 16 6 Z" fill="url(#gradient)" rx="2"/>
+    
+    <!-- Bottom section -->
+    <path d="M4 20 L20 20 Q24 20 24 24 L24 26 Q24 28 20 28 L8 28 Q4 28 4 26 Z" fill="#06B6D4" rx="2"/>
+    
+    <!-- Small circle accent -->
+    <circle cx="26" cy="26" r="3" fill="#7C3AED"/>
+  </g>
+</svg>
