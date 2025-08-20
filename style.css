@@ -24,6 +24,11 @@ body {
   padding: 0 2rem;
 }
 
+.highlight {
+  color: #667eea;
+  font-weight: 600;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
