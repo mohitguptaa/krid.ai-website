@@ -606,28 +606,76 @@ body {
   border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
-.video-placeholder {
-  padding: 2rem;
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  padding: 1.5rem;
   text-align: center;
 }
 
-.video-placeholder i {
-  font-size: 3rem;
-  color: #ff0000;
-  margin-bottom: 1rem;
-}
-
-.video-placeholder h4 {
+.video-caption h4 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1a202c;
   margin-bottom: 0.5rem;
 }
 
-.video-placeholder p {
+.video-caption p {
   color: #64748b;
-  margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.video-placeholder-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+}
+
+.video-placeholder-demo i {
+  font-size: 3rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.video-placeholder-demo h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.video-placeholder-demo p {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.conversion-note {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
 }
 
 .agentic-ai__comparison {
