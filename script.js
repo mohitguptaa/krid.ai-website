@@ -170,53 +170,7 @@ const formatNumber = (num) => {
   return num.toString();
 };
 
-// Animate hero stats when they come into view
-const heroStatsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const statNumbers = entry.target.querySelectorAll('.hero__stat-number');
-      
-      statNumbers.forEach(stat => {
-        const text = stat.textContent;
-        let target = 0;
-        
-        // Extract number from text
-        if (text.includes('500+')) {
-          target = 500;
-          stat.textContent = '0+';
-          animateCounter(stat, target);
-          stat.textContent = target + '+';
-        } else if (text.includes('$16T')) {
-          target = 16;
-          stat.textContent = '$0T';
-          const timer = setInterval(() => {
-            target--;
-            if (target <= 0) {
-              stat.textContent = '$16T';
-              clearInterval(timer);
-            } else {
-              stat.textContent = `$${16 - target}T`;
-            }
-          }, 100);
-        } else if (text.includes('88%')) {
-          target = 88;
-          stat.textContent = '0%';
-          animateCounter(stat, target);
-          stat.textContent = target + '%';
-        }
-      });
-      
-      heroStatsObserver.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const heroStats = document.querySelector('.hero__stats');
-  if (heroStats) {
-    heroStatsObserver.observe(heroStats);
-  }
-});
 
 // ===== FLOATING ELEMENTS ANIMATION =====
 document.addEventListener('DOMContentLoaded', () => {
