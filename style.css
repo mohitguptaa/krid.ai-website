@@ -2504,6 +2504,403 @@ body {
   }
 }
 
+/* ===== FOUNDER MODE PAGE STYLES ===== */
+.founder-mode-principles {
+  padding: 6rem 0;
+  background: white;
+}
+
+.founder-mode-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.principles-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.principle-section {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.principle-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.principle-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.principle-item p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.founder-mode-mindset {
+  margin-top: 3rem;
+}
+
+.mindset-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+.mindset-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.mindset-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.mindset-content p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.mindset-content em {
+  font-style: italic;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Everyone in Founder Mode Section */
+.everyone-founder-mode {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.everyone-founder-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.founder-mode-benefits {
+  margin-bottom: 4rem;
+}
+
+.founder-mode-benefits h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-item {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.benefit-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-content p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.implementation-guide {
+  margin-bottom: 4rem;
+}
+
+.implementation-guide h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.implementation-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step-item {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.step-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.founder-mode-warning {
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.warning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.warning-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.warning-content p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.warning-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Founder Mode in Practice Section */
+.founder-mode-practice {
+  padding: 6rem 0;
+  background: white;
+}
+
+.practice-examples {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.example-scenarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.scenario-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.scenario-card--founder {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.scenario-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.scenario-card--founder h4 {
+  color: #667eea;
+}
+
+.scenario-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scenario-card li {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.scenario-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+.scenario-card--founder li::before {
+  color: #667eea;
+}
+
+/* Responsive Design for Founder Mode */
+@media (max-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .example-scenarios {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-mode-principles,
+  .everyone-founder-mode,
+  .founder-mode-practice {
+    padding: 4rem 0;
+  }
+  
+  .mindset-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .step-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .warning-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .founder-mode-benefits h3,
+  .implementation-guide h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .principle-section,
+  .benefit-item,
+  .step-item {
+    padding: 1.5rem;
+  }
+  
+  .mindset-card {
+    padding: 2rem;
+  }
+  
+  .founder-mode-benefits h3,
+  .implementation-guide h3 {
+    font-size: 1.5rem;
+  }
+}
+
 /* ===== SCROLL ANIMATIONS ===== */
 .scroll-animate {
   opacity: 0;
