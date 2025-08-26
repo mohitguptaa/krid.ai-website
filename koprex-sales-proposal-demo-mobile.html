@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <!-- Primary Meta Tags -->
+  <title>Koprex Sales Proposal Generation - Mobile Demo | Krid.ai</title>
+  <meta name="title" content="Koprex Sales Proposal Generation - Mobile Demo | Krid.ai">
+  <meta name="description" content="Experience Koprex AI Sales Assistant on mobile - intelligent proposal generation with real-time market data and CRM integration.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  
+  <link rel="icon" type="image/png" href="fav_icon_krid_ai.png">
+  
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-color: #667eea;
+      --secondary-color: #764ba2;
+      --accent-color: #b45309;
+      --background-dark: #1a202c;
+      --background-light: #2d3748;
+      --text-primary: #ffffff;
+      --text-secondary: #a0aec0;
+      --border-color: #4a5568;
+      --success-color: #10b981;
+      --warning-color: #fbbf24;
+      --mobile-animation-duration: 0.2s;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--background-dark);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      overflow-x: hidden;
+    }
+    
+    /* Mobile App Container */
+    .mobile-app {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-light) 100%);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Header */
+    .mobile-header {
+      background: var(--background-light);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .company-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .koprex-logo-img {
+      height: 32px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    .app-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .user-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      background: var(--background-light);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 73px;
+      z-index: 99;
+    }
+    
+    .nav-tab {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--mobile-animation-duration) ease;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .nav-tab.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+      background: rgba(102, 126, 234, 0.1);
+    }
+    
+    /* Content Areas */
+    .content-area {
+      display: none;
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .content-area.active {
+      display: block;
+    }
+    
+    /* Chat Interface */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 80px; /* Space for input */
+    }
+    
+    .message {
+      max-width: 85%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: messageSlideIn var(--mobile-animation-duration) ease-out forwards;
+    }
+    
+    .message--user {
+      background: var(--background-light);
+      color: var(--text-primary);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    
+    .message--ai {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--text-primary);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .message--system {
+      background: var(--background-light);
+      color: var(--text-secondary);
+      align-self: center;
+      font-size: 0.8rem;
+      font-style: italic;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      max-width: 90%;
+      text-align: center;
+    }
+    
+    .message-sender {
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      opacity: 0.8;
+    }
+    
+    .highlight-data {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Analysis Cards */
+    .analysis-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 80px;
+    }
+    
+    .analysis-card {
+      background: var(--background-light);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: all var(--mobile-animation-duration) ease;
+    }
+    
+    .analysis-card:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: white;
+    }
+    
+    .card-icon--specs { background: var(--success-color); }
+    .card-icon--pricing { background: var(--accent-color); }
+    .card-icon--timeline { background: var(--primary-color); }
+    .card-icon--proposal { background: var(--secondary-color); }
+    
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .card-content {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    
+    .specs-table {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    
+    .specs-table td {
+      padding: 0.25rem 0;
+      font-size: 0.85rem;
+    }
+    
+    .specs-table td:first-child {
+      color: var(--text-secondary);
+      width: 40%;
+    }
+    
+    .specs-table td:last-child {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    
+    .pricing-breakdown {
+      margin-top: 0.5rem;
+    }
+    
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.25rem 0;
+      font-size: 0.85rem;
+    }
+    
+    .price-item:last-child {
+      border-top: 1px solid var(--border-color);
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      font-weight: 600;
+      color: var(--success-color);
+    }
+    
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+    }
+    
+    .status-indicator--processing {
+      background: rgba(251, 191, 36, 0.2);
+      color: var(--warning-color);
+    }
+    
+    .status-indicator--ready {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--success-color);
+    }
+    
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    
+    /* Typing Indicator */
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--background-light);
+      border-radius: 12px;
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      max-width: 85%;
+    }
+    
+    .typing-dots {
+      display: flex;
+      gap: 0.25rem;
+    }
+    
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--text-secondary);
+      border-radius: 50%;
+      animation: typingPulse 1.4s infinite ease-in-out;
+    }
+    
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    
+    @keyframes typingPulse {
+      0%, 60%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      30% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+    
+    /* Input Area */
+    .chat-input {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--background-light);
+      border-top: 1px solid var(--border-color);
+      padding: 1rem;
+      z-index: 100;
+    }
+    
+    .input-container {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+    
+    .input-field {
+      flex: 1;
+      background: var(--background-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      resize: none;
+      min-height: 44px;
+      max-height: 120px;
+    }
+    
+    .input-field:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .send-button {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      border: none;
+      border-radius: 12px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      transition: all var(--mobile-animation-duration) ease;
+    }
+    
+    .send-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    /* Demo Controls */
+    .demo-controls {
+      position: fixed;
+      bottom: 100px;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1000;
+    }
+    
+    .control-btn {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--mobile-animation-duration) ease;
+      color: var(--text-primary);
+    }
+    
+    .control-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    /* Animations */
+    @keyframes messageSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Loading States */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      .mobile-header {
+        padding: 0.75rem;
+      }
+      
+      .koprex-logo-img {
+        height: 28px;
+      }
+      
+      .app-title {
+        font-size: 0.8rem;
+      }
+      
+      .user-info {
+        font-size: 0.75rem;
+      }
+      
+      .user-avatar {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+      }
+      
+      .nav-tab {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+      }
+      
+      .content-area {
+        padding: 0.75rem;
+      }
+      
+      .message {
+        max-width: 90%;
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+      }
+      
+      .analysis-card {
+        padding: 0.75rem;
+      }
+      
+      .card-title {
+        font-size: 0.9rem;
+      }
+      
+      .card-content {
+        font-size: 0.8rem;
+      }
+      
+      .chat-input {
+        padding: 0.75rem;
+      }
+      
+      .input-field {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+      }
+      
+      .demo-controls {
+        bottom: 90px;
+        right: 0.75rem;
+      }
+      
+      .control-btn {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .mobile-header {
+        padding: 0.5rem;
+      }
+      
+      .koprex-logo-img {
+        height: 24px;
+      }
+      
+      .nav-tab {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+      }
+      
+      .content-area {
+        padding: 0.5rem;
+      }
+      
+      .message {
+        max-width: 95%;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
+      }
+      
+      .analysis-card {
+        padding: 0.6rem;
+      }
+      
+      .card-title {
+        font-size: 0.85rem;
+      }
+      
+      .card-content {
+        font-size: 0.75rem;
+      }
+      
+      .chat-input {
+        padding: 0.6rem;
+      }
+      
+      .input-field {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+      }
+      
+      .demo-controls {
+        bottom: 85px;
+        right: 0.5rem;
+      }
+      
+      .control-btn {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    
+    /* Landscape Mode */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .mobile-header {
+        padding: 0.5rem 1rem;
+      }
+      
+      .nav-tabs {
+        top: 61px;
+      }
+      
+      .nav-tab {
+        padding: 0.5rem;
+      }
+      
+      .content-area {
+        padding: 0.5rem 1rem;
+      }
+      
+      .chat-input {
+        padding: 0.5rem 1rem;
+      }
+      
+      .demo-controls {
+        bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-app">
+    <!-- Header -->
+    <header class="mobile-header">
+      <div class="header-content">
+        <div class="company-logo">
+          <img src="https://www.koprex.in/assets/images/logo/koprex-logo-new.png" alt="Koprex Logo" class="koprex-logo-img">
+        </div>
+        <div class="app-title">Sales Assistant v2.1.4</div>
+        <div class="user-info">
+          <div class="user-avatar">AS</div>
+          <span>Aisha</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="chat">
+        <i class="fas fa-comments"></i>
+        <span>Chat</span>
+      </button>
+      <button class="nav-tab" data-tab="analysis">
+        <i class="fas fa-chart-line"></i>
+        <span>Analysis</span>
+      </button>
+    </nav>
+
+    <!-- Chat Content -->
+    <div class="content-area active" id="chatContent">
+      <div class="chat-container" id="chatContainer">
+        <!-- Messages will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Analysis Content -->
+    <div class="content-area" id="analysisContent">
+      <div class="analysis-container" id="analysisContainer">
+        <!-- Analysis cards will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="chat-input">
+      <div class="input-container">
+        <textarea 
+          class="input-field" 
+          placeholder="Type your message to Kridai..."
+          rows="1"
+        ></textarea>
+        <button class="send-button">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Demo Controls -->
+    <div class="demo-controls">
+      <button class="control-btn" id="playPauseBtn" title="Play/Pause Demo">
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="control-btn" id="restartBtn" title="Restart Demo">
+        <i class="fas fa-redo"></i>
+      </button>
+      <button class="control-btn" id="speedBtn" title="Demo Speed">
+        <i class="fas fa-tachometer-alt"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    class KoprexMobileDemo {
+      constructor() {
+        this.messages = [
+          {
+            type: 'system',
+            text: 'Connection established with Kridai AI Assistant',
+            delay: 500
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'Hey Kridai, I just got off the phone with a new customer, Global Electroplating. They need a proposal for a custom copper anode. It\'s a bit of a special order.',
+            delay: 2000
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'Hello Aisha. I\'m ready. Please provide the key details for the custom requirement.',
+            delay: 1500,
+            analysis: 'customer-detection'
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'Okay, here\'s the brief: they need 1,000 kilograms of custom flat-plate copper anodes. The size is non-standard: 5 inches by 20 inches, with a thickness of 20mm. They need a quote with a delivery timeline within three weeks.',
+            delay: 3000
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'Understood. I\'m fetching our internal product and material cost data, and cross-referencing this against our standard flat plate specifications.',
+            delay: 2000,
+            analysis: 'specs-analysis'
+          },
+          {
+            type: 'system',
+            text: 'Analyzing product specifications and market data...',
+            delay: 1500
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'Aisha, the requested dimensions for the flat plate anode are custom. This will require a special tooling setup, which I\'ve factored into the cost. The thickness is within our normal production parameters, so that won\'t require new equipment.',
+            delay: 2500,
+            analysis: 'tooling-analysis'
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'Great. Can you generate the pricing? Please use our standard profit margin and assume we\'ll need a couple of extra days buffer for the custom run.',
+            delay: 2000
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'Calculating... I\'ve estimated the tooling and production costs for the custom size. Based on real-time copper prices from the Multi Commodity Exchange of India (MCX), the production cost is estimated at <span class="highlight-data">₹680 per kilogram</span>. Adding your requested profit margin, the final quoted price is <span class="highlight-data">₹750 per kilogram</span>, for a total of <span class="highlight-data">₹7,50,000</span> for the 1,000 kg order.',
+            delay: 3500,
+            analysis: 'pricing-calculation'
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'And the delivery timeline?',
+            delay: 1500
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'With a custom production run, quality control, and the buffer you requested, the estimated delivery is <span class="highlight-data">20 days</span> from the date of order confirmation. I\'ve also verified the necessary raw material stock and confirmed a production slot is available.',
+            delay: 2500,
+            analysis: 'timeline-analysis'
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'This is excellent. Please generate a formal proposal document for me. Include all the specifications, the pricing, the delivery timeline, and add a standard clause about the material purity being 99.99% as per our product data sheet.',
+            delay: 3000
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'Generating proposal... The document is now ready for your review. I\'ve also created a digital record of this quote in the CRM and set a follow-up reminder for you in one week.',
+            delay: 2500,
+            analysis: 'proposal-generation'
+          },
+          {
+            type: 'user',
+            sender: 'Aisha',
+            text: 'Perfect. Thanks, Kridai. This saves me so much time. I\'m going to send this over to Global Electroplating right away.',
+            delay: 2000
+          },
+          {
+            type: 'ai',
+            sender: 'Kridai',
+            text: 'My pleasure, Aisha. Let me know if you need any adjustments or a revised quote.',
+            delay: 1500
+          }
+        ];
+
+        this.analysisData = {
+          'customer-detection': {
+            title: 'Customer Analysis',
+            icon: 'fas fa-building',
+            iconClass: 'card-icon--specs',
+            content: `
+              <table class="specs-table">
+                <tr><td>Company:</td><td>Global Electroplating</td></tr>
+                <tr><td>Industry:</td><td>Metal Processing</td></tr>
+                <tr><td>Status:</td><td>New Customer</td></tr>
+                <tr><td>Priority:</td><td>High</td></tr>
+              </table>
+            `
+          },
+          'specs-analysis': {
+            title: 'Product Specifications',
+            icon: 'fas fa-ruler-combined',
+            iconClass: 'card-icon--specs',
+            content: `
+              <table class="specs-table">
+                <tr><td>Product:</td><td>Flat-plate Copper Anodes</td></tr>
+                <tr><td>Quantity:</td><td>1,000 kg</td></tr>
+                <tr><td>Dimensions:</td><td>5" × 20" × 20mm</td></tr>
+                <tr><td>Standard Size:</td><td>No (Custom)</td></tr>
+                <tr><td>Thickness:</td><td>Within Range ✓</td></tr>
+              </table>
+            `
+          },
+          'tooling-analysis': {
+            title: 'Production Analysis',
+            icon: 'fas fa-tools',
+            iconClass: 'card-icon--specs',
+            content: `
+              <div class="card-content">
+                Custom tooling required for non-standard dimensions.
+                <div class="status-indicator status-indicator--processing">
+                  <div class="status-dot"></div>
+                  Special Setup Required
+                </div>
+              </div>
+            `
+          },
+          'pricing-calculation': {
+            title: 'Pricing Breakdown',
+            icon: 'fas fa-calculator',
+            iconClass: 'card-icon--pricing',
+            content: `
+              <div class="pricing-breakdown">
+                <div class="price-item">
+                  <span>Base Material Cost:</span>
+                  <span>₹650/kg</span>
+                </div>
+                <div class="price-item">
+                  <span>Custom Tooling:</span>
+                  <span>₹20/kg</span>
+                </div>
+                <div class="price-item">
+                  <span>Processing:</span>
+                  <span>₹10/kg</span>
+                </div>
+                <div class="price-item">
+                  <span>Profit Margin:</span>
+                  <span>₹70/kg</span>
+                </div>
+                <div class="price-item">
+                  <span>Total Price:</span>
+                  <span>₹750/kg</span>
+                </div>
+              </div>
+            `
+          },
+          'timeline-analysis': {
+            title: 'Delivery Timeline',
+            icon: 'fas fa-calendar-alt',
+            iconClass: 'card-icon--timeline',
+            content: `
+              <table class="specs-table">
+                <tr><td>Tooling Setup:</td><td>3-4 days</td></tr>
+                <tr><td>Production:</td><td>12-14 days</td></tr>
+                <tr><td>Quality Control:</td><td>2 days</td></tr>
+                <tr><td>Buffer Time:</td><td>2 days</td></tr>
+                <tr><td>Total:</td><td>20 days</td></tr>
+              </table>
+              <div class="status-indicator status-indicator--ready">
+                <div class="status-dot"></div>
+                Production Slot Available
+              </div>
+            `
+          },
+          'proposal-generation': {
+            title: 'Proposal Generated',
+            icon: 'fas fa-file-pdf',
+            iconClass: 'card-icon--proposal',
+            content: `
+              <div class="card-content">
+                Formal proposal document created with all specifications, pricing, and delivery terms.
+                <div class="status-indicator status-indicator--ready">
+                  <div class="status-dot"></div>
+                  Ready for Review
+                </div>
+              </div>
+            `
+          }
+        };
+
+        this.currentMessageIndex = 0;
+        this.isPlaying = false;
+        this.speed = 1;
+        this.chatContainer = document.getElementById('chatContainer');
+        this.analysisContainer = document.getElementById('analysisContainer');
+        
+        this.initControls();
+        this.initTabNavigation();
+        this.startDemo();
+      }
+
+      initControls() {
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const speedBtn = document.getElementById('speedBtn');
+
+        playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        restartBtn.addEventListener('click', () => this.restartDemo());
+        speedBtn.addEventListener('click', () => this.toggleSpeed());
+      }
+
+      initTabNavigation() {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const contents = document.querySelectorAll('.content-area');
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Update active content
+            contents.forEach(content => {
+              content.classList.remove('active');
+              if (content.id === `${targetTab}Content`) {
+                content.classList.add('active');
+              }
+            });
+          });
+        });
+      }
+
+      startDemo() {
+        this.isPlaying = true;
+        this.updatePlayPauseButton();
+        this.playNextMessage();
+      }
+
+      playNextMessage() {
+        if (!this.isPlaying || this.currentMessageIndex >= this.messages.length) {
+          return;
+        }
+
+        const message = this.messages[this.currentMessageIndex];
+        
+        setTimeout(() => {
+          if (this.isPlaying) {
+            this.addMessage(message);
+            this.currentMessageIndex++;
+            this.playNextMessage();
+          }
+        }, message.delay / this.speed);
+      }
+
+      addMessage(message) {
+        if (message.type === 'ai' && message.sender === 'Kridai') {
+          // Show typing indicator first
+          this.showTypingIndicator();
+          
+          setTimeout(() => {
+            this.hideTypingIndicator();
+            this.createMessageElement(message);
+            if (message.analysis) {
+              this.updateAnalysisPanel(message.analysis);
+            }
+          }, 1500 / this.speed);
+        } else {
+          this.createMessageElement(message);
+        }
+      }
+
+      createMessageElement(message) {
+        const messageEl = document.createElement('div');
+        messageEl.className = `message message--${message.type}`;
+        
+        let content = '';
+        if (message.sender) {
+          content += `<div class="message-sender">${message.sender}</div>`;
+        }
+        content += message.text;
+        
+        messageEl.innerHTML = content;
+        
+        this.chatContainer.appendChild(messageEl);
+        this.scrollToBottom(this.chatContainer);
+      }
+
+      showTypingIndicator() {
+        const typingEl = document.createElement('div');
+        typingEl.className = 'typing-indicator';
+        typingEl.id = 'typingIndicator';
+        typingEl.innerHTML = `
+          <div class="message-sender">Kridai</div>
+          <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        `;
+        
+        this.chatContainer.appendChild(typingEl);
+        this.scrollToBottom(this.chatContainer);
+      }
+
+      hideTypingIndicator() {
+        const typingEl = document.getElementById('typingIndicator');
+        if (typingEl) {
+          typingEl.remove();
+        }
+      }
+
+      updateAnalysisPanel(analysisKey) {
+        const data = this.analysisData[analysisKey];
+        if (!data) return;
+
+        const cardEl = document.createElement('div');
+        cardEl.className = 'analysis-card';
+        cardEl.innerHTML = `
+          <div class="card-header">
+            <div class="card-icon ${data.iconClass}">
+              <i class="${data.icon}"></i>
+            </div>
+            <div class="card-title">${data.title}</div>
+          </div>
+          ${data.content}
+        `;
+
+        this.analysisContainer.appendChild(cardEl);
+        this.scrollToBottom(this.analysisContainer);
+      }
+
+      scrollToBottom(element) {
+        element.scrollTop = element.scrollHeight;
+      }
+
+      togglePlayPause() {
+        this.isPlaying = !this.isPlaying;
+        this.updatePlayPauseButton();
+        
+        if (this.isPlaying) {
+          this.playNextMessage();
+        }
+      }
+
+      updatePlayPauseButton() {
+        const btn = document.getElementById('playPauseBtn');
+        const icon = btn.querySelector('i');
+        icon.className = this.isPlaying ? 'fas fa-pause' : 'fas fa-play';
+      }
+
+      restartDemo() {
+        this.currentMessageIndex = 0;
+        this.chatContainer.innerHTML = '';
+        this.analysisContainer.innerHTML = '';
+        this.hideTypingIndicator();
+        
+        if (this.isPlaying) {
+          this.playNextMessage();
+        }
+      }
+
+      toggleSpeed() {
+        this.speed = this.speed === 1 ? 2 : this.speed === 2 ? 0.5 : 1;
+        
+        const btn = document.getElementById('speedBtn');
+        const speedText = this.speed === 2 ? '2x' : this.speed === 0.5 ? '0.5x' : '1x';
+        btn.title = `Demo Speed: ${speedText}`;
+      }
+    }
+
+    // Initialize demo when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new KoprexMobileDemo();
+    });
+  </script>
+</body>
+</html>
