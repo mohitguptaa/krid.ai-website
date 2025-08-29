@@ -186,7 +186,56 @@
               </a>
             </div>
           </div>
-          
+
+          <!-- Agentic AI Intern Job -->
+          <div class="job-card">
+            <div class="job-card__header">
+              <div class="job-card__icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="job-card__meta">
+                <span class="job-card__department">AI Research</span>
+                <span class="job-card__posted" id="intern-posted-days">Posted recently</span>
+              </div>
+            </div>
+            
+            <div class="job-card__content">
+              <h3 class="job-card__title">Agentic AI Intern</h3>
+              <p class="job-card__description">
+                Learn to build sophisticated autonomous AI systems while working with cutting-edge technologies. 
+                Get hands-on experience with LLMs, multi-agent architectures, and reasoning systems.
+              </p>
+              
+              <div class="job-card__tags">
+                <span class="job-card__tag">Python</span>
+                <span class="job-card__tag">AI/ML</span>
+                <span class="job-card__tag">LLMs</span>
+                <span class="job-card__tag">Learning mindset</span>
+              </div>
+              
+              <div class="job-card__details">
+                <div class="job-card__detail">
+                  <i class="fas fa-clock"></i>
+                  <span>Full Time</span>
+                </div>
+                <div class="job-card__detail">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Remote / Hybrid</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="job-card__actions">
+              <a href="agentic-ai-intern.html" class="btn btn--primary">
+                <i class="fas fa-eye"></i>
+                View Details
+              </a>
+              <a href="mailto:info@krid.ai?subject=Application: Agentic AI Intern&body=Hi Krid.ai team,%0D%0A%0D%0AI am interested in the Agentic AI Intern position. Please find my resume attached.%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards," class="btn btn--outline">
+                <i class="fas fa-paper-plane"></i>
+                Quick Apply
+              </a>
+            </div>
+          </div>
 
           <!-- Placeholder for future jobs -->
           <div class="job-card job-card--coming-soon">
@@ -340,5 +389,52 @@
 
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script src="script.js"></script>
+  <script>
+    // Calculate and display days since posting
+    function updatePostedDays() {
+      const today = new Date('2025-08-29');
+      
+      // Developer position
+      const devPosted = new Date('2025-08-25');
+      const devDiffTime = Math.abs(today - devPosted);
+      const devDiffDays = Math.ceil(devDiffTime / (1000 * 60 * 60 * 24));
+      
+      // Intern position
+      const internPosted = new Date('2025-08-29');
+      const internDiffTime = Math.abs(today - internPosted);
+      const internDiffDays = Math.ceil(internDiffTime / (1000 * 60 * 60 * 24));
+      
+      function formatPostedText(diffDays) {
+        if (diffDays === 0) {
+          return 'Posted today';
+        } else if (diffDays === 1) {
+          return 'Posted yesterday';
+        } else if (diffDays < 7) {
+          return `Posted ${diffDays} days ago`;
+        } else if (diffDays < 30) {
+          const weeks = Math.floor(diffDays / 7);
+          return `Posted ${weeks} ${weeks === 1 ? 'week' : 'weeks'} ago`;
+        } else {
+          const months = Math.floor(diffDays / 30);
+          return `Posted ${months} ${months === 1 ? 'month' : 'months'} ago`;
+        }
+      }
+
+      // Update developer position
+      const devPostedElement = document.querySelector('.job-card__posted');
+      if (devPostedElement) {
+        devPostedElement.textContent = formatPostedText(devDiffDays);
+      }
+
+      // Update intern position
+      const internPostedElement = document.getElementById('intern-posted-days');
+      if (internPostedElement) {
+        internPostedElement.textContent = formatPostedText(internDiffDays);
+      }
+    }
+
+    // Run when the page loads
+    document.addEventListener('DOMContentLoaded', updatePostedDays);
+  </script>
 </body>
 </html>
