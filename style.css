@@ -2236,11 +2236,13 @@ body {
   width: auto;
   filter: brightness(0) invert(1);
   transition: all 0.3s ease;
+  display: block;
+  max-width: 200px;
 }
 
 .footer__logo-image:hover {
   transform: scale(1.05);
-  filter: brightness(0) invert(1) sepia(1) hue-rotate(230deg) saturate(2);
+  opacity: 0.9;
 }
 
 .footer__description {
