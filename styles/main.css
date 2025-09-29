@@ -1,0 +1,219 @@
+/* ===== MAIN STYLESHEET ===== */
+/* Import base styles */
+@import url('./base/reset.css');
+@import url('./base/utilities.css');
+
+/* Import component styles */
+@import url('./components/header.css');
+@import url('./components/hero.css');
+@import url('./components/sections.css');
+@import url('./components/benefits.css');
+@import url('./components/footer.css');
+@import url('./components/animations.css');
+@import url('./components/modal.css');
+
+/* Import page-specific styles */
+@import url('./pages/agentic-ai.css');
+@import url('./pages/services.css');
+@import url('./pages/how-it-works.css');
+@import url('./pages/what-are-you-waiting.css');
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero__title {
+    font-size: 3rem;
+  }
+  
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .cta__content {
+    display: block;
+    text-align: center;
+  }
+  
+  .cta__actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .cta__button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .agentic-ai__content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-table {
+    font-size: 0.875rem;
+  }
+  
+  .comparison-header,
+  .comparison-cell {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(2, 43, 60, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav__menu.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav__list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav__link--cta {
+    margin-left: 0;
+  }
+  
+  .nav__toggle {
+    display: block;
+  }
+  
+  .hero {
+    padding: 6rem 0 3rem;
+    min-height: auto;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero__stats {
+    justify-content: center;
+  }
+  
+  .hero__ai-elements {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .section-header__title {
+    font-size: 1.875rem;
+  }
+  
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  
+  .tab-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta__title {
+    font-size: 2rem;
+  }
+  
+  .cta__actions {
+    flex-direction: column;
+  }
+  
+  .cta__button-wrapper {
+    margin-top: 1.5rem;
+  }
+  
+  .footer__links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  
+  .job-listings {
+    padding: 3em 1em;
+  }
+  
+  .job-listings__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .job-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .job-card__actions {
+    flex-direction: column;
+  }
+  
+  .job-card__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__ai-elements {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .ai-element {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+  }
+  
+  .service-card,
+  .team-card {
+    padding: 2rem;
+  }
+  
+  .section-header__title {
+    font-size: 2rem;
+  }
+  
+}

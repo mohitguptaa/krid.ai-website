@@ -1,0 +1,156 @@
+/* ===== WHAT ARE YOU WAITING FOR SECTION ===== */
+.what-are-you-waiting {
+  padding: 6rem 0;
+  background: #f0ebe5;
+}
+
+.what-are-you-waiting .section-header__title {
+  color: #022B3C;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.what-are-you-waiting .section-header__description {
+  color: #64748b;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.what-are-you-waiting__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+.what-are-you-waiting__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.what-are-you-waiting__card {
+  background: #faf8f4;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-are-you-waiting__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.what-are-you-waiting__icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.what-are-you-waiting__title {
+  font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #022B3C;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.what-are-you-waiting__description {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.what-are-you-waiting__cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  min-width: 200px;
+}
+
+/* What are you waiting for section specific button styling */
+.what-are-you-waiting .btn--primary {
+  background: #C2A469;
+  color: #022B3C;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.what-are-you-waiting .btn--primary:hover {
+  background: #B8941F;
+  color: #022B3C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 164, 105, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .what-are-you-waiting__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .what-are-you-waiting__card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .what-are-you-waiting {
+    padding: 4rem 0;
+  }
+  
+  .what-are-you-waiting__cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .what-are-you-waiting__card {
+    padding: 1.5rem;
+  }
+  
+  .what-are-you-waiting__title {
+    font-size: 1.25rem;
+  }
+  
+  .what-are-you-waiting__cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn--large {
+    width: 100%;
+    max-width: 300px;
+  }
+}

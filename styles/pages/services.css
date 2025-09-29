@@ -1,0 +1,211 @@
+/* ===== SERVICES SECTION ===== */
+.services {
+  padding: 6rem 0;
+  background: #f0ebe5;
+}
+
+/* ===== ROLES SCROLL SECTION ===== */
+.services .container {
+  max-width: 100%;
+}
+
+.roles-container {
+  position: relative;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(194, 164, 105, 0.4);
+}
+
+.scroll-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(194, 164, 105, 0.6);
+}
+
+.scroll-btn--left {
+  left: -25px;
+}
+
+.scroll-btn--right {
+  right: -25px;
+}
+
+.roles-scroll-container {
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+  max-width: 100%;
+}
+
+.roles-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.roles-scroll {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  min-width: max-content;
+  width: 100%;
+}
+
+.roles-scroll .service-card {
+  flex-shrink: 0;
+  min-width: 300px;
+  max-width: 320px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive Design for Roles Scroll */
+@media (max-width: 1024px) {
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .scroll-btn--left {
+    left: -20px;
+  }
+  
+  .scroll-btn--right {
+    right: -20px;
+  }
+  
+  .roles-scroll .service-card {
+    min-width: 280px;
+    max-width: 300px;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .roles-container {
+    margin-top: 2rem;
+  }
+  
+  .scroll-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+  
+  .scroll-btn--left {
+    left: -17px;
+  }
+  
+  .scroll-btn--right {
+    right: -17px;
+  }
+  
+  .roles-scroll {
+    gap: 1.5rem;
+  }
+  
+  .roles-scroll .service-card {
+    min-width: 260px;
+    max-width: 280px;
+    min-height: 320px;
+  }
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #faf8f4;
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card__title {
+  font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #022B3C;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.service-card__description {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-card__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-feature {
+  background: rgba(102, 126, 234, 0.1);
+  color: #C2A469;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.service-card__number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #C2A469;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}

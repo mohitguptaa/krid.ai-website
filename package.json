@@ -1,0 +1,31 @@
+{
+  "name": "krid-ai-website",
+  "version": "2.0.0",
+  "description": "Krid.ai - Agentic AI Consultancy Website",
+  "main": "pages/index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000 --directory .",
+    "build": "echo 'No build process needed - static site'",
+    "lint:css": "echo 'CSS linting not configured'",
+    "lint:js": "echo 'JS linting not configured'"
+  },
+  "keywords": [
+    "ai",
+    "consultancy",
+    "agentic-ai",
+    "website",
+    "static"
+  ],
+  "author": "Krid.ai",
+  "license": "UNLICENSED",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krid-ai/krid.ai-website.git"
+  },
+  "homepage": "https://krid.ai"
+}
+

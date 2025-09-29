@@ -1,0 +1,93 @@
+/* ===== UTILITY CLASSES ===== */
+
+/* Premium heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #022B3C;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.highlight {
+  color: #C2A469;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(194, 164, 105, 0.4);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 164, 105, 0.6);
+}
+
+.btn--outline {
+  background: transparent;
+  color: #C2A469;
+  border: 2px solid #C2A469;
+}
+
+.btn--outline:hover {
+  background: #C2A469;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 164, 105, 0.3);
+}
+
+.btn--large {
+  padding: 1.125rem 2.5rem;
+  font-size: 1rem;
+}
