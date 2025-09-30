@@ -1,7 +1,7 @@
 /* ===== SECTION HEADER ===== */
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-header__badge {
@@ -18,7 +18,7 @@
 
 .section-header__title {
   font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #022B3C;
   margin-bottom: 1rem;
@@ -35,7 +35,7 @@
 
 /* ===== ABOUT SECTION ===== */
 .about {
-  padding: 8rem 0;
+  padding: 6rem 0;
   background: linear-gradient(135deg, #f5f0e8 0%, #faf8f4 100%);
   position: relative;
 }
@@ -174,4 +174,74 @@
   color: #64748b;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-header__title {
+    font-size: 1.5rem;
+  }
+  
+  .section-header__description {
+    font-size: 1rem;
+  }
+  
+  .about__content {
+    gap: 2rem;
+  }
+  
+  .about__text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .principle-card {
+    padding: 1.5rem;
+  }
+  
+  .principle-title {
+    font-size: 1rem;
+  }
+  
+  .principle-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .section-header__title {
+    font-size: 1.375rem;
+  }
+  
+  .section-header__description {
+    font-size: 0.875rem;
+  }
+  
+  .principle-card {
+    padding: 1.25rem;
+  }
+  
+  .principle-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .feature__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }

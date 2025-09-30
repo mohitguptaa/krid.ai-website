@@ -1,8 +1,8 @@
 /* ===== AGENTIC AI EDUCATION SECTION ===== */
 .agentic-ai-education {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: rgba(2, 43, 60, 0.95);
-  min-height: 500px;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
 }
@@ -333,21 +333,64 @@
 .agentic-ai__definition {
   max-width: 800px;
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .agentic-ai__definition h3 {
   font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
 }
 
 .agentic-ai__definition p {
-  font-size: 1.4rem;
+  font-size: 1.125rem;
   color: white;
-  line-height: 1.8;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .agentic-ai-education {
+    padding: 3rem 0;
+    min-height: 300px;
+  }
+  
+  .agentic-ai__definition {
+    padding: 1.5rem;
+  }
+  
+  .agentic-ai__definition h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .agentic-ai__definition p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .agentic-ai-education {
+    padding: 2.5rem 0;
+    min-height: 250px;
+  }
+  
+  .agentic-ai__definition {
+    padding: 1rem;
+  }
+  
+  .agentic-ai__definition h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .agentic-ai__definition p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
 }
 

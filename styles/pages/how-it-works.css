@@ -61,15 +61,43 @@
   }
   
   .how-it-works__grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
   
   .how-it-works__card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   
   .how-it-works__title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+  
+  .how-it-works__description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 3rem 0;
+  }
+  
+  .how-it-works__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .how-it-works__card {
+    padding: 1.25rem;
+  }
+  
+  .how-it-works__title {
+    font-size: 1rem;
+  }
+  
+  .how-it-works__description {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }

@@ -30,7 +30,7 @@
 }
 
 .nav__logo-image {
-  height: 40px;
+  height: 35px;
   width: auto;
   transition: all 0.3s ease;
 }
@@ -102,4 +102,25 @@
 .nav__link--active {
   color: #C2A469 !important;
   font-weight: 600;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .nav__logo-image {
+    height: 30px;
+  }
+  
+  .nav {
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__logo-image {
+    height: 28px;
+  }
+  
+  .nav {
+    padding: 0.625rem 0;
+  }
 }

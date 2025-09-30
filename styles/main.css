@@ -83,7 +83,7 @@
     width: 100%;
     background: rgba(2, 43, 60, 0.95);
     backdrop-filter: blur(20px);
-    padding: 2rem;
+    padding: 1.5rem;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -111,12 +111,12 @@
   }
   
   .hero {
-    padding: 6rem 0 3rem;
+    padding: 4rem 0 2rem;
     min-height: auto;
   }
   
   .hero__title {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
   }
   
   .hero__buttons {
@@ -134,7 +134,7 @@
   }
   
   .section-header__title {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
   
   .services__grid {
@@ -148,7 +148,7 @@
   }
   
   .cta__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .cta__actions {
@@ -166,7 +166,7 @@
   
   
   .job-listings {
-    padding: 3em 1em;
+    padding: 2rem 1rem;
   }
   
   .job-listings__grid {
@@ -174,7 +174,7 @@
   }
   
   .job-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
   
   .job-card__actions {
@@ -189,31 +189,31 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
   
   .hero__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .hero__ai-elements {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   
   .ai-element {
-    width: 60px;
-    height: 60px;
-    font-size: 1.25rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
   
   .service-card,
   .team-card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   
   .section-header__title {
-    font-size: 2rem;
+    font-size: 1.375rem;
   }
   
 }

@@ -92,6 +92,53 @@
   min-width: 200px;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .what-are-you-waiting {
+    padding: 4rem 0;
+  }
+  
+  .what-are-you-waiting__cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .what-are-you-waiting__card {
+    padding: 2rem;
+  }
+  
+  .what-are-you-waiting__title {
+    font-size: 1.25rem;
+  }
+  
+  .what-are-you-waiting__description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .what-are-you-waiting {
+    padding: 3rem 0;
+  }
+  
+  .what-are-you-waiting__cards {
+    gap: 1.25rem;
+  }
+  
+  .what-are-you-waiting__card {
+    padding: 1.5rem;
+  }
+  
+  .what-are-you-waiting__title {
+    font-size: 1.125rem;
+  }
+  
+  .what-are-you-waiting__description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
 /* What are you waiting for section specific button styling */
 .what-are-you-waiting .btn--primary {
   background: #C2A469;
