@@ -121,7 +121,7 @@
               <a href="#services" class="nav__link">Solutions</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link nav__link--cta" onclick="openDemoForm(); return false;">Request a Demo</a>
+              <a href="https://wa.me/918527734152" class="nav__link nav__link--cta" target="_blank" rel="noopener noreferrer">Request a Demo</a>
             </li>
       </ul>
         </div>
@@ -149,7 +149,7 @@
         </p>
         
                   <div class="hero__buttons">
-            <a href="#" class="btn btn--primary" onclick="openDemoForm(); return false;">
+            <a href="https://wa.me/918527734152" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-play-circle"></i>
               Request a demo
             </a>
@@ -478,7 +478,7 @@
       
       <div class="what-are-you-waiting__content">
         <div class="what-are-you-waiting__cta">
-          <a href="#" class="btn btn--primary" onclick="openDemoForm(); return false;">
+          <a href="https://wa.me/918527734152" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-play-circle"></i>
             Request a demo
           </a>
@@ -532,7 +532,7 @@
             <h4 class="footer__column-title">Contact</h4>
             <ul class="footer__list">
               <li><a href="mailto:info@krid.ai" class="footer__link">info@krid.ai</a></li>
-              <li><a href="#" class="footer__link" onclick="openDemoForm(); return false;">Request a Demo</a></li>
+              <li><a href="https://wa.me/918527734152" class="footer__link" target="_blank" rel="noopener noreferrer">Request a Demo</a></li>
             </ul>
           </div>
         </div>
@@ -546,108 +546,7 @@
     </div>
   </footer>
 
-  <!-- Demo Form Modal -->
-  <div id="demoModal" class="modal">
-    <div class="modal__content">
-      <div class="modal__header">
-        <h2 class="modal__title">Request a Demo</h2>
-        <span class="modal__close" onclick="closeDemoForm()">&times;</span>
-      </div>
-      <form id="demoForm" class="modal__form">
-            <div class="form__group">
-              <label for="name" class="form__label form__label--required">Full Name</label>
-              <input type="text" id="name" name="name" class="form__input form__input--required" required>
-              <div class="form__required-text">* required</div>
-            </div>
-            
-            <div class="form__group">
-              <label for="email" class="form__label form__label--required">Email Address</label>
-              <input type="email" id="email" name="email" class="form__input form__input--required" required>
-              <div class="form__required-text">* required</div>
-            </div>
-        
-        <div class="form__group">
-          <label for="company" class="form__label form__label--required">Company</label>
-          <input type="text" id="company" name="company" class="form__input form__input--required" required>
-          <div class="form__required-text">* required</div>
-        </div>
-        
-        <div class="form__group">
-          <label for="phone" class="form__label">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form__input">
-        </div>
-        
-        <div class="form__group">
-          <label for="role" class="form__label">Job Title</label>
-          <input type="text" id="role" name="role" class="form__input">
-        </div>
-        
-        <div class="form__group">
-          <label for="message" class="form__label form__label--required">Tell us about your AI needs</label>
-          <textarea id="message" name="message" class="form__textarea form__textarea--required" rows="4" placeholder="What specific challenges are you looking to solve with AI assistants?" required></textarea>
-          <div class="form__required-text">* required</div>
-        </div>
-        
-        <div class="form__group">
-          <label for="timeline" class="form__label">When would you like to get started?</label>
-          <select id="timeline" name="timeline" class="form__select">
-            <option value="">Select timeline</option>
-            <option value="immediately">Immediately</option>
-            <option value="within-month">Within a month</option>
-            <option value="within-quarter">Within 3 months</option>
-            <option value="exploring">Just exploring</option>
-          </select>
-        </div>
-        
-        <div class="form__actions">
-          <button type="button" class="btn btn--outline" onclick="closeDemoForm()">Cancel</button>
-          <button type="submit" class="btn btn--primary">
-            <i class="fas fa-paper-plane"></i>
-            Send Request
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <!-- Scripts -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  
-  <!-- Modal Functions (inline for immediate availability) -->
-  <script>
-    function openDemoForm() {
-      console.log('openDemoForm called');
-      const modal = document.getElementById('demoModal');
-      console.log('Modal element:', modal);
-      if (modal) {
-        modal.classList.add('show');
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        console.log('Modal opened successfully');
-      } else {
-        console.error('Modal element not found!');
-      }
-    }
-    
-    function closeDemoForm() {
-      const modal = document.getElementById('demoModal');
-      if (modal) {
-        modal.classList.remove('show');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        // Reset form
-        const form = document.getElementById('demoForm');
-        if (form) {
-          form.reset();
-          // Clear any messages
-          const existingMessage = form.querySelector('.form__message');
-          if (existingMessage) {
-            existingMessage.remove();
-          }
-        }
-      }
-    }
-  </script>
   
   <script type="module" src="../scripts/main.js"></script>
 </body>
