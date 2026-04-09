@@ -47,8 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const isAtStart = scrollContainer.scrollLeft <= 0;
         const isAtEnd = scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.clientWidth - 1);
         
-        scrollLeftBtn.style.opacity = isAtStart ? '0.5' : '1';
-        scrollRightBtn.style.opacity = isAtEnd ? '0.5' : '1';
+        scrollLeftBtn.style.opacity = isAtStart ? '0' : '1';
+        scrollLeftBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+        
+        scrollRightBtn.style.opacity = isAtEnd ? '0' : '1';
+        scrollRightBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
         
         scrollLeftBtn.disabled = isAtStart;
         scrollRightBtn.disabled = isAtEnd;
