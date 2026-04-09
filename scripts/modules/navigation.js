@@ -37,11 +37,13 @@ window.addEventListener('scroll', () => {
   
   // Add/remove scrolled class for styling
   if (scrollTop > 100) {
-    header.style.background = 'rgba(2, 43, 60, 0.98)';
-    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+    header.style.background = 'rgba(10, 14, 20, 0.98)';
+    header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+    header.style.borderBottom = '1px solid rgba(30, 39, 54, 0.8)';
   } else {
-    header.style.background = 'rgba(2, 43, 60, 0.95)';
+    header.style.background = 'rgba(10, 14, 20, 0.95)';
     header.style.boxShadow = 'none';
+    header.style.borderBottom = '1px solid transparent';
   }
   
   // Hide/show header on scroll

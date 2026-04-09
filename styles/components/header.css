@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(2, 43, 60, 0.95);
+  background: rgba(10, 14, 20, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
@@ -47,7 +47,7 @@
 }
 
 .nav__link {
-  color: #e2e8f0;
+  color: var(--border-color);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 0;
@@ -56,7 +56,7 @@
 }
 
 .nav__link:hover {
-  color: #C2A469;
+  color: var(--brand-gold);
 }
 
 .nav__link::after {
@@ -66,7 +66,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
   transition: width 0.3s ease;
 }
 
@@ -75,8 +75,8 @@
 }
 
 .nav__link--cta {
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
-  color: #022B3C !important;
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
+  color: var(--text-primary) !important;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
   margin-left: 1rem;
@@ -94,13 +94,13 @@
 .nav__toggle {
   display: none;
   font-size: 1.5rem;
-  color: #e2e8f0;
+  color: var(--border-color);
   cursor: pointer;
 }
 
 /* Active navigation state */
 .nav__link--active {
-  color: #C2A469 !important;
+  color: var(--brand-gold) !important;
   font-weight: 600;
 }
 

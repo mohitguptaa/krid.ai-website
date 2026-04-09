@@ -1,7 +1,7 @@
 /* ===== SERVICES SECTION ===== */
 .services {
   padding: 4rem 0;
-  background: #f0ebe5;
+  background: var(--bg-dark);
 }
 
 /* ===== ROLES SCROLL SECTION ===== */
@@ -21,10 +21,10 @@
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
   border: none;
   border-radius: 50%;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.25rem;
   cursor: pointer;
   z-index: 10;
@@ -182,12 +182,12 @@
 }
 
 .service-card {
-  background: #faf8f4;
+  background: var(--bg-card);
   padding: 2rem;
   border-radius: 16px;
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
@@ -199,12 +199,12 @@
 .service-card__icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -213,13 +213,13 @@
   font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #022B3C;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
 }
 
 .service-card__description {
-  color: #64748b;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -232,7 +232,7 @@
 
 .service-feature {
   background: rgba(102, 126, 234, 0.1);
-  color: #C2A469;
+  color: var(--brand-gold);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.875rem;
@@ -246,7 +246,7 @@
   width: 40px;
   height: 40px;
   background: rgba(102, 126, 234, 0.1);
-  color: #C2A469;
+  color: var(--brand-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;

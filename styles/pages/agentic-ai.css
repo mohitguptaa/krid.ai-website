@@ -1,7 +1,7 @@
 /* ===== AGENTIC AI EDUCATION SECTION ===== */
 .agentic-ai-education {
   padding: 4rem 0;
-  background: rgba(2, 43, 60, 0.95);
+  background: rgba(10, 14, 20, 0.95);
   min-height: 400px;
   position: relative;
   overflow: hidden;
@@ -340,14 +340,14 @@
   font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
 }
 
 .agentic-ai__definition p {
   font-size: 1.125rem;
-  color: white;
+  color: var(--text-primary);
   line-height: 1.6;
 }
 

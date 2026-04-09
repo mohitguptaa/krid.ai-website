@@ -46,7 +46,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(194, 164, 105, 0.2);
-  color: #C2A469;
+  color: var(--brand-gold);
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -64,25 +64,25 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 2rem;
-  color: #C2A469;
+  color: var(--brand-gold);
   letter-spacing: -0.01em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__title--gradient {
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .hero__title--gold {
-  color: #C2A469;
+  color: var(--brand-gold);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__title--white {
-  color: #ffffff;
+  color: var(--text-primary);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -116,8 +116,8 @@
 
 /* Hero-specific button styling */
 .hero .btn--primary {
-  background: #C2A469;
-  color: #022B3C;
+  background: var(--brand-gold);
+  color: var(--text-primary);
   border: none;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -129,14 +129,14 @@
 }
 
 .hero .btn--primary:hover {
-  background: #B8941F;
+  background: var(--brand-gold-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(194, 164, 105, 0.4);
 }
 
 .hero .btn--outline {
   background: transparent;
-  color: white;
+  color: var(--text-primary);
   border: 2px solid white;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -148,8 +148,8 @@
 }
 
 .hero .btn--outline:hover {
-  background: white;
-  color: #022B3C;
+  background: var(--bg-card);
+  color: var(--text-primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
@@ -169,13 +169,13 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.875rem;
   font-weight: 700;
-  color: #022B3C;
+  color: var(--text-primary);
   line-height: 1;
 }
 
 .hero__stat-label {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -195,12 +195,12 @@
   position: absolute;
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.75rem;
   box-shadow: 0 4px 20px rgba(194, 164, 105, 0.2);
   animation: float 8s ease-in-out infinite;
@@ -245,7 +245,7 @@
   padding: 0;
   border-radius: 0;
   font-style: italic;
-  color: #022B3C;
+  color: var(--text-primary);
   border: none;
   box-shadow: none;
   font-size: 1.125rem;
@@ -267,9 +267,9 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 2px solid #C2A469;
+  border: 2px solid var(--brand-gold);
   border-radius: 50%;
-  color: #C2A469;
+  color: var(--brand-gold);
   text-decoration: none;
   animation: bounce 2s infinite;
 }

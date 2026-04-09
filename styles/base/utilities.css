@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: #022B3C;
+  color: var(--text-primary);
 }
 
 h1 {
@@ -45,7 +45,7 @@ h6 {
 }
 
 .highlight {
-  color: #C2A469;
+  color: var(--brand-gold);
   font-weight: 600;
 }
 
@@ -64,8 +64,8 @@ h6 {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, #C2A469 0%, #B8941F 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
+  color: var(--text-primary);
   box-shadow: 0 4px 15px rgba(194, 164, 105, 0.4);
 }
 
@@ -76,13 +76,13 @@ h6 {
 
 .btn--outline {
   background: transparent;
-  color: #C2A469;
-  border: 2px solid #C2A469;
+  color: var(--brand-gold);
+  border: 2px solid var(--brand-gold);
 }
 
 .btn--outline:hover {
-  background: #C2A469;
-  color: white;
+  background: var(--brand-gold);
+  color: var(--text-primary);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(194, 164, 105, 0.3);
 }

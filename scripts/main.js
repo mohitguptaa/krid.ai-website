@@ -1,65 +1,71 @@
 // ===== MAIN JAVASCRIPT FILE =====
 // Import all modules
-import './modules/navigation.js';
-import './modules/animations.js';
-import './modules/tabs.js';
-import './modules/forms.js';
-import './modules/video.js';
-import './modules/performance.js';
+import './modules/navigation.js?v=2';
+import './modules/animations.js?v=2';
+import './modules/tabs.js?v=2';
+import './modules/forms.js?v=2';
+import './modules/video.js?v=2';
+import './modules/performance.js?v=2';
 
-// ===== ROLES SCROLL FUNCTIONALITY =====
+// ===== CAROUSEL SCROLL FUNCTIONALITY =====
 document.addEventListener('DOMContentLoaded', function() {
-  const scrollLeftBtn = document.getElementById('scrollLeft');
-  const scrollRightBtn = document.getElementById('scrollRight');
-  const rolesScrollContainer = document.querySelector('.roles-scroll-container');
+  const carousels = document.querySelectorAll('.carousel-container');
   
-  console.log('Scroll elements found:', {
-    scrollLeftBtn: !!scrollLeftBtn,
-    scrollRightBtn: !!scrollRightBtn,
-    rolesScrollContainer: !!rolesScrollContainer
-  });
-  
-  if (scrollLeftBtn && scrollRightBtn && rolesScrollContainer) {
-    const scrollAmount = 400; // Scroll by 400px each time
+  carousels.forEach((carousel, index) => {
+    const scrollLeftBtn = carousel.querySelector('.scroll-left');
+    const scrollRightBtn = carousel.querySelector('.scroll-right');
+    const scrollContainer = carousel.querySelector('.scroll-content');
     
-    scrollLeftBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      console.log('Left button clicked, scrolling left by', scrollAmount);
-      rolesScrollContainer.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
+    console.log(`Carousel ${index} elements found:`, {
+      scrollLeftBtn: !!scrollLeftBtn,
+      scrollRightBtn: !!scrollRightBtn,
+      scrollContainer: !!scrollContainer
     });
     
-    scrollRightBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      console.log('Right button clicked, scrolling right by', scrollAmount);
-      rolesScrollContainer.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
+    if (scrollLeftBtn && scrollRightBtn && scrollContainer) {
+      const scrollAmount = 400; // Scroll by 400px each time
+      
+      scrollLeftBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollContainer.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
       });
-    });
-    
-    // Update button visibility based on scroll position
-    function updateButtonVisibility() {
-      const isAtStart = rolesScrollContainer.scrollLeft === 0;
-      const isAtEnd = rolesScrollContainer.scrollLeft >= (rolesScrollContainer.scrollWidth - rolesScrollContainer.clientWidth);
       
-      scrollLeftBtn.style.opacity = isAtStart ? '0.5' : '1';
-      scrollRightBtn.style.opacity = isAtEnd ? '0.5' : '1';
+      scrollRightBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollContainer.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      });
       
-      scrollLeftBtn.disabled = isAtStart;
-      scrollRightBtn.disabled = isAtEnd;
+      // Update button visibility based on scroll position
+      function updateButtonVisibility() {
+        // Use a small threshold (1px) for end detection to avoid floating point issues
+        const isAtStart = scrollContainer.scrollLeft <= 0;
+        const isAtEnd = scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.clientWidth - 1);
+        
+        scrollLeftBtn.style.opacity = isAtStart ? '0.5' : '1';
+        scrollRightBtn.style.opacity = isAtEnd ? '0.5' : '1';
+        
+        scrollLeftBtn.disabled = isAtStart;
+        scrollRightBtn.disabled = isAtEnd;
+      }
+      
+      // Initial check
+      updateButtonVisibility();
+      
+      // Update on scroll
+      scrollContainer.addEventListener('scroll', updateButtonVisibility);
+      
+      // Update on window resize as clientWidth might change
+      window.addEventListener('resize', updateButtonVisibility);
+    } else {
+      console.error(`Scroll elements not found in carousel ${index}!`);
     }
-    
-    // Initial check
-    updateButtonVisibility();
-    
-    // Update on scroll
-    rolesScrollContainer.addEventListener('scroll', updateButtonVisibility);
-  } else {
-    console.error('Scroll elements not found!');
-  }
+  });
 });
 
 console.log('🚀 krid.ai website loaded successfully!');

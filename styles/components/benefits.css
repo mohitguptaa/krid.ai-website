@@ -1,7 +1,7 @@
 /* ===== BENEFITS SECTION ===== */
 .benefits {
   padding: 3rem 0;
-  background: #f8f9fa;
+  background: var(--bg-card);
 }
 
 .benefits__grid {
@@ -55,7 +55,7 @@
   font-family: 'ChiswickHeadline', 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #022B3C;
+  color: var(--text-primary);
   line-height: 1.3;
   margin: 0;
   text-align: center;
